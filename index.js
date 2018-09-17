@@ -1,26 +1,28 @@
 function takeANumber(line, name) {
-  line.push(name)
-  return `Welcome, ${name}. You are number ${line.length} in line.`
+  line.push(name);
+  return `Welcome, ${name}. You are number ${line.length} in line.`;
 }
 
 function nowServing(line) {
-  if (line.length === 0) {
-    return "There is nobody waiting to be served!"
-  } else return "Currently serving " + line.shift() + "."
-} 
+  if(line.length === 0) {
+    return "There is nobody waiting to be served!";
+  } else {
+    return `Currently serving ${line.shift()}.`;
+  }
+}
 
 function currentLine(line) {
-  if (line.length === 0) {
-    return "The line is currently empty."
+  if(line.length === 0) {
+    return "The line is currently empty.";
   } else {
-    var temp
-    for (var i=0; i < line.length; i++) {
-      if (i === 0) {
-        temp = "1. " + line[i]
+    var l;
+    for(var x = 0;x<line.length;x++) {
+      if(x === 0) {
+        l =  `${line[x]}`;
       } else {
-        temp = temp + ", "+ (i+1) + ". " + line[i]
+        l = `${l}, ${(x+1)}. ${line[x]}`;
       }
     }
-    return "The line is currently: " + temp
   }
+  return `The line is currently: 1. ${l}`;
 }
